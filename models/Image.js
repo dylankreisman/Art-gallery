@@ -12,6 +12,18 @@ Image.init(
             primaryKey: true,
             autoIncrement: true
         },
+        image_name:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        artist_name:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         hosted_url: {
             type: DataTypes.STRING,
             allowNull: false
