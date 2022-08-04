@@ -26,12 +26,12 @@
             <button class="button" id="saved">Saved</button>
         </div>
 
-        <div class="bottom-aside">
+        <div class="login-section">
             {{#if logeddIn}}
-            <button class="button" id="logout">Logout</button>
+            <a href="/logout">Logout</a>
             {{else}}
-            <button class="button" id="login">Login</button>
-            <button class="button" id="signup">Signup</button>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
             {{/if}}
         </div>
     </aside>
