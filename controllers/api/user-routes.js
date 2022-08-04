@@ -8,7 +8,7 @@ router.get('/',  (req, res) => {
         include: [
         {
             model: Image,
-            attributes: ['id', 'image_name', 'description', 'category_id']
+            attributes: ['id', 'image_name', 'description', 'category_id', 'hosted_url']
         }]
     })
     .then((userData) => res.json(userData))
@@ -51,5 +51,6 @@ router.post('/', async (req, res) => {
       }
 })
 
+module.exports = router
 
 module.exports = router;
