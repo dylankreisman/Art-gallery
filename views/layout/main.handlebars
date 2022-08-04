@@ -12,19 +12,36 @@
 <body>
     <div id="header">
         <nav>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-        </nav>
-
-        <header>
             <h1>Find & Upload Art!</h1>
-        </header>
+            <a href="/">Home</a>
+            <a href="/categories">Categories</a>
+            <a href="/request">Request</a>
+        </nav>
     </div>
+
+        <aside>
+        <div class="top-aside">
+            <button class="button" id="upload">Upload</button>
+            <button class="button" id="request">Request</button>
+            <button class="button" id="saved">Saved</button>
+        </div>
+
+        <div class="bottom-aside">
+            {{#if logeddIn}}
+            <button class="button" id="logout">Logout</button>
+            {{else}}
+            <button class="button" id="login">Login</button>
+            <button class="button" id="signup">Signup</button>
+            {{/if}}
+        </div>
+    </aside>
+
     <main>
         <div class="content">
             {{{body}}}
         </div>
     </main>
+
 </body>
 
 </html>

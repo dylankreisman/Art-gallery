@@ -8,10 +8,10 @@ router.get('/', async (req, res) => {
 
   Image.findAll({
     attributes: [
-      'id',
-      'title',
-      'body',
-      'publish_date'
+      'image_name',
+      'hosted_url',
+      'artist_name',
+      'description'
     ]
   })
     .then(imageData => {
