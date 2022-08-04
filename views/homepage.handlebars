@@ -1,10 +1,12 @@
 {{#each images as |image| }}
 <div class="main">
-    <img src={{hosted_url}} alt="image here" />
-    <h1>Hello World</h1>
+    <div class="homepage">
 
+        <div id="body">
+            <h1>{{image_name}}</h1>
+            <img src={{hosted_url}} alt="artists image">
+        </div>
 
-
-
+    </div>
 </div>
 {{/each}}
