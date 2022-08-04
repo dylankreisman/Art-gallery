@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
+
     <div id="header">
         <nav>
             <h1>Find & Upload Art!</h1>
@@ -19,28 +20,36 @@
         </nav>
     </div>
 
-    <aside>
-        <div class="top-aside">
-            <button class="button" id="upload">Upload</button>
-            <button class="button" id="request">Request</button>
-            <button class="button" id="saved">Saved</button>
-        </div>
+    <div class="container">
+        <div class="row">
+            <div id="side">
+                <div class="col-2">
+                    <div id="top-half-side">
+                        <button class="button" id="upload">Upload</button>
+                        <button class="button" id="request">Request</button>
+                        <button class="button" id="saved">Saved</button>
+                    </div>
 
-        <div class="login-section">
-            {{#if logeddIn}}
-            <a href="/logout">Logout</a>
-            {{else}}
-            <a href="/login">Login</a>
-            <a href="/signup">Sign Up</a>
-            {{/if}}
-        </div>
-    </aside>
+                    <div id="bottom-half-side">
+                        {{#if logeddIn}}
+                        <a href="/logout">Logout</a>
+                        {{else}}
+                        <a href="/login">Login</a>
+                        <a href="/signup">Sign Up</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
 
-    <main>
-        <div class="image">
-            {{{body}}}
+            <div class="col-10" id="gallery">
+                {{{body}}}
+            </div>
         </div>
-    </main>
+    </div>
+
+
+
+
 
 </body>
 
