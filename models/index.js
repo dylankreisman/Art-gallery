@@ -18,4 +18,4 @@ Image.hasMany(Category, {
     foreignKey: 'category_id'
 });
 
-module.exports = { User, Project };
+module.exports = { User, Category, Image};
