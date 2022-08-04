@@ -28,18 +28,6 @@ User.init(
           isEmail: true,
         },
       },
-      image_id: {
-        type: DataTypes.INTEGER,
-        foreignKey: true,
-
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id',
-        },
-      },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
