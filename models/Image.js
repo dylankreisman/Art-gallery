@@ -20,10 +20,13 @@ Image.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        artist_name:{
+/*         artist_name:{
             type: DataTypes.STRING,
-            allowNull: false
-        },
+            references: {
+                model: 'user',
+                key: 'username',
+              },
+        }, */
         hosted_url: {
             type: DataTypes.STRING,
             allowNull: false
