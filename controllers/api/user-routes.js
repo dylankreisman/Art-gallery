@@ -36,4 +36,17 @@ router.get('/:username', (req, res) => {
     })
 })
 
+router.post('/:username', (req, res) => {
+    User.create(req.body, {
+        where: {
+            model: User
+        }
+    })
+    .then((userData) => res.json(userData))
+    .catch((err) => {
+        console.log(err)
+        res.status(500).json(err)
+    })
+})
+
 
