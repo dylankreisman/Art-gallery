@@ -1,14 +1,14 @@
-const router = require('exress').Router()
+const router = require('express').Router()
 const { User, Image, Category } = require('../../models')
 
 
 router.get('/',  (req, res) => {
     User.findAll({
-        attributes: ['id', 'username','email','image_id','user_id'],
+        attributes: ['id', 'username','email'],
         include: [
         {
             model: Image,
-            attributes: ['id', 'image_name', 'description', 'category_id']
+            attributes: ['id', 'image_name', 'description', 'category_id', 'hosted_url']
         }]
     })
     .then((userData) => res.json(userData))
@@ -49,4 +49,5 @@ router.post('/:username', (req, res) => {
     })
 })
 
+module.exports = router
 
