@@ -18,7 +18,7 @@ router.get('/',  (req, res) => {
 })
 })
 
-router.get('/', (req, res) => {
+router.get('/:username', (req, res) => {
     User.findOne({
         where: {
             id: req.params.id
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
         attributes: ['id', 'username','email','image_id','user_id'],
         include: [{
             model: Image,
-            attributes: ["image_name"]
+            attributes: ['id', 'image_name', 'description', 'category_id']
         }]
     })
     .then((userData) => res.json(userData))
