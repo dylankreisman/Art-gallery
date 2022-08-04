@@ -1,4 +1,28 @@
 nav{
     display: flex;
     justify-content: space-between;
+    height: 150px;
 }
+
+nav h1 {
+    font-size: 40px;
+    padding: 40px;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#gallery img{
+    width: 250px;
+    border: 2px solid pink;
+    margin: 20px;
+}
+
+#body {
+    text-align: center;
+    font-size: 18px;
+}
+
