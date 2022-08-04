@@ -10,14 +10,13 @@ router.get('/', async (req, res) => {
     attributes: [
       'image_name',
       'hosted_url',
-      'artist_name',
       'description'
     ]
   })
     .then(imageData => {
-      const image = imageData.map(content => image.get({ plain: true }));
+      const images = imageData.map(image => image.get({ plain: true }));
       res.render('homepage', {
-        contents,
+        images,
       })
     })
     .catch(err => {
