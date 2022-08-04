@@ -7,6 +7,12 @@ router.get('/', async (req, res) => {
   // res.render('homepage');
 
   Image.findAll({
+    // include: [
+    //   {
+    //     model: Image,
+    //     attributes: ['image_name', 'hosted_url', 'description']
+    //   },
+    // ]
     attributes: [
       'image_name',
       'hosted_url',
