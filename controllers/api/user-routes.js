@@ -1,4 +1,4 @@
-const router = require('exress').Router()
+const router = require('express').Router()
 const { User, Image, Category } = require('../../models')
 
 
@@ -50,3 +50,4 @@ router.post('/:username', (req, res) => {
 })
 
 
+module.exports = router;
