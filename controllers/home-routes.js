@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { rest } = require('lodash');
-const { Image } = require('../models');
+const { Image, User } = require('../models');
 
 router.get('/', async (req, res) => {
 
@@ -52,8 +52,39 @@ router.get('/', async (req, res) => {
   
     });
 
-  router.get('/signup', (req,res) => res.render('signup'))
 
-  router.get('/login', (req,res) => res.render('login'))
+  router.get('/dashboard/:id', async (req, res) => {
+
+    User.findOne({
+      where: {
+        id: req.params.id
+    },
+      attributes: ['username'],
+      include: [{
+        model: User,
+        attributes: [ 'id',
+        'image_name',
+        'hosted_url',
+        'description',
+        'user_id',
+        'category_id']
+    }]
+
+    })
+      .then(dashboardData => {
+        const dashboard = dashboardData.map(dashboard => dashboard.get({ plain: true }));
+        res.render('dashboard', {
+          dashboard,
+        })
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      })
+    
+    });
+
+    router.get('/signup', (req,res) => res.render('signup'))
+
+    router.get('/login', (req,res) => res.render('login'))
 
   module.exports = router;
