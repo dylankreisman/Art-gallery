@@ -51,4 +51,11 @@ router.post('/', async (req, res) => {
       }
 })
 
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: { email: req.body.email}
+    })
+    .if (!userData) 
+})
+
 module.exports = router

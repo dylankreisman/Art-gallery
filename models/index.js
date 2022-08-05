@@ -17,4 +17,5 @@ Image.belongsTo(Category, {
 Category.hasMany(Image, {
     foreignKey: 'category_id'
 });
+
 module.exports = { User, Category, Image};
