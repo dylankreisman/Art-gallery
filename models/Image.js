@@ -44,6 +44,11 @@ Image.init(
               model: 'user',
               key: 'id',
             },
+        },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW, 
         }
     },
     {
@@ -51,7 +56,7 @@ Image.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'image',
-      }
+    }
 );
 
 module.exports = Image;
