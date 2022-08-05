@@ -3,18 +3,17 @@ const { Category, Image, User } = require('../../models')
 
 router.get('/', (req, res) => {
 Category.findAll({
-    model: Category,
     attributes: ['id', 'category_name', 'image_id'],
     include: [{
         model: Image,
         attributes:  ['id', 'image_name', 'description']
     },
-    {
-        model: User,
-        attributes: ['username','email']
-    }
-    ]
-})
+    // {
+    //     model: User,
+    //     attributes: ['username','email']
+    // }
+]
+    })
     .then((categoryData) => res.json(categoryData))
     .catch((err) => {
         res.status(500).json(err)
@@ -30,15 +29,16 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'category_name', 'image_id'],
        include: [
         { model: Image, 
-        attributes: ['image_name', 'description','hosted_url']
-        },
-        { model: User, 
-        attributes: ['username', 'email']
-        }
-       ]
+        attributes: ['id', 'image_name', 'description']
+        }]
+        // { model: User, 
+        // attributes: ['id', 'username', 'email']
+        // }
+       
     })
-    .then((categoryData) => res.join(categoryData))
+    .then((categoryData) => res.json(categoryData))
     .catch((err) => {
+        console.log(err)
         res.status(500).json(err)
     })
 }
