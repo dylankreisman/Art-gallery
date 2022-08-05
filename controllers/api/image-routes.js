@@ -1,10 +1,21 @@
 const router = require('express').Router()
-const { User, Image, Category } = require('../../models')
+const { User, Image, Category, Comment } = require('../../models')
 
 
 router.get('/',  (req, res) => {
     Image.findAll({
         attributes: ['id', 'image_name', 'description', 'category_id', 'user_id', 'hosted_url'],
+        order: [['date_created', 'DESC']],
+        include: [
+          {
+            model: Comment,
+            attributes: ['id', 'commentary', 'image_id', 'user_id', 'date_created'],
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -19,6 +30,17 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: ['id', 'image_name', 'description', 'category_id', 'user_id', 'hosted_url'],
+        order: [['date_created', 'DESC']],
+        include: [
+          {
+            model: Comment,
+            attributes: ['id', 'commentary', 'image_id', 'user_id', 'date_created'],
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
