@@ -27,7 +27,6 @@ Image.hasMany(Comment, {
     foreignKey: 'image_id'
 });
 
-
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
