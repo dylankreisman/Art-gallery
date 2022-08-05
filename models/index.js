@@ -17,4 +17,22 @@ Image.belongsTo(Category, {
 Category.hasMany(Image, {
     foreignKey: 'category_id'
 });
-module.exports = { User, Category, Image};
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id'
+});
+
+Image.hasMany(Comment, {
+    foreignKey: 'image_id'
+});
+
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+Comment.belongsTo(Image, {
+    foreignKey: 'post_id'
+});
+
+module.exports = { User, Category, Image, Comment};
