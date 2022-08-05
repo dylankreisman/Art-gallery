@@ -9,35 +9,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
-<body>
 
-    <div id="header">
+<body>
+    <header>
+        <h1>Find & Upload Art!</h1>
         <nav>
-            <h1>Find & Upload Art!</h1>
             <a href="/">Home</a>
             <a href="/categories">Categories</a>
             <a href="/request">Request</a>
         </nav>
-    </div>
+    </header>
+
 
     <div class="container">
         <div class="row">
-            <div id="side">
-                <div class="col-2">
-                    <div id="top-half-side">
-                        <button class="button" id="upload">Upload</button>
-                        <button class="button" id="request">Request</button>
-                        <button class="button" id="saved">Saved</button>
-                    </div>
+            <div class="col-2" id="side">
+                <div id="top-half-side">
+                    <button class="button" id="upload">Upload</button>
+                    <button class="button" id="request">Request</button>
+                    <button class="button" id="saved">Saved</button>
+                </div>
 
-                    <div id="bottom-half-side">
-                        {{#if logeddIn}}
-                        <a href="/logout">Logout</a>
-                        {{else}}
-                        <a href="/login">Login</a>
-                        <a href="/signup">Sign Up</a>
-                        {{/if}}
-                    </div>
+                <div id="bottom-half-side">
+                    {{#if logeddIn}}
+                    <a href="/logout">Logout</a>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    <a href="/signup">Sign Up</a>
+                    {{/if}}
                 </div>
             </div>
 
@@ -46,9 +45,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 
 </body>

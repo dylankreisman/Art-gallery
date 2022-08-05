@@ -1,12 +1,13 @@
 {{#each images as |image| }}
 <div class="main">
     <div class="homepage">
-
         <div id="body">
-            <h4>{{image_name}}</h4>
-            <div class="images">
-            <img class="hp-imgs" src="/images/{{hosted_url}}" alt="{{description}}">
-            {{!-- <p>{{description}}</p> --}}
+            <div class="ind-img">
+                <h4>{{image_name}}</h4>
+                <div class="images">
+                    <a href="/image/{{id}}"><img class="hp-imgs" src="/images/{{hosted_url}}" alt="{{description}}"></a>
+                        <p>{{description}}</p>
+                </div>
             </div>
         </div>
 
