@@ -3,8 +3,8 @@ const { response } = require("express");
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-const email = document.querySelector("#username-login").value.trim()
-const password = document.querySelector("#password-login").value.trim()
+const email = document.querySelector("#login-email").value.trim()
+const password = document.querySelector("#login-password").value.trim()
 
 if (email && password) {
 

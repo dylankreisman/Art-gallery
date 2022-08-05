@@ -1,3 +1,5 @@
+const cloudinary = require('cloudinary')
+
 var myWidget = cloudinary.createUploadWidget({
     cloudName: 'dkwiaib2k', 
     uploadPreset: 'my_preset'}, 

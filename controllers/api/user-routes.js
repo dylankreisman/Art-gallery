@@ -5,7 +5,7 @@ const { restore } = require('../../models/User')
 
 router.get('/',  (req, res) => {
     User.findAll({
-        attributes: ['id', 'username','email'],
+        attributes: ['id', 'username','email', 'password'],
         include: [
         {
             model: Image,
@@ -55,7 +55,8 @@ router.post('/', async (req, res) => {
 router.post('/login',  (req, res) => {
  User.findOne({
     where: {
-        email: req.body.email
+        email: req.body.email, 
+        password: req.body.password
     },
     }).then((userData) => {
         if(!userData) {
