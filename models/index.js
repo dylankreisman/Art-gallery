@@ -32,7 +32,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Image, {
-    foreignKey: 'post_id'
+    foreignKey: 'image_id'
 });
 
 module.exports = { User, Category, Image, Comment};
