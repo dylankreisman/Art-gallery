@@ -4,15 +4,8 @@ const { Image } = require('../models');
 
 router.get('/', async (req, res) => {
 
-  // res.render('homepage');
-
   Image.findAll({
-    // include: [
-    //   {
-    //     model: Image,
-    //     attributes: ['image_name', 'hosted_url', 'description']
-    //   },
-    // ]
+
     attributes: [
       'image_name',
       'hosted_url',
@@ -30,6 +23,32 @@ router.get('/', async (req, res) => {
     })
   
   });
+
+  router.get('/image/:id', async (req, res) => {
+
+    Image.findOne({
+  
+      where: {
+        id: req.params.id
+    },
+    attributes: [
+      'image_name',
+      'hosted_url',
+      'description'
+    ]
+    })
+      .then(imagesData => { 
+        const images = imagesData.get({ plain: true });
+        res.render('single-image', {
+          images,
+        })
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      })
+    
+    });
 
   router.get('/signup', (req,res) => res.render('signup'))
 
