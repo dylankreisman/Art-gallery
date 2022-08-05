@@ -48,7 +48,7 @@ nav a {
     margin: 20px;
 }
 
-.ind-img {
+.gal-img {
     width: 250px;
     height: 450px;
     border: 2px solid black;
@@ -74,4 +74,16 @@ nav a {
     border: 2px solid black;
     background-color: black;
     color: white;
+}
+
+#single-page {
+    text-align: center;
+    border: 2px solid pink;
+    margin-top: 30px;
+}
+
+.page-imgs {
+    border: 2px solid pink;
+    width: 600px;
+    height: auto;
 }

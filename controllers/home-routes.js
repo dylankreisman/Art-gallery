@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
   Image.findAll({
 
     attributes: [
+      'id',
       'image_name',
       'hosted_url',
       'description'
@@ -24,7 +25,7 @@ router.get('/', async (req, res) => {
   
   });
 
-  router.get('/image/:id', async (req, res) => {
+  router.get('/images/:id', async (req, res) => {
 
     Image.findOne({
   
@@ -32,6 +33,7 @@ router.get('/', async (req, res) => {
         id: req.params.id
     },
     attributes: [
+      'id',
       'image_name',
       'hosted_url',
       'description'
@@ -47,7 +49,7 @@ router.get('/', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
       })
-    
+  
     });
 
   router.get('/signup', (req,res) => res.render('signup'))
