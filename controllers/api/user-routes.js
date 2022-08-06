@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'username','email'],
+        attributes: ['id','email'],
         include: [{
             model: Image,
             attributes: ['id', 'image_name', 'description', 'category_id']
@@ -54,15 +54,19 @@ router.post('/login',  (req, res) => {
  User.findOne({
     where: {
         email: req.body.email, 
-        password: req.body.password
+       // password: req.body.password
     },
     }).then((userData) => {
         if(!userData) {
             res.status(400).json({ message: 'Incorrect username or email, try again'})
             return;
-    }})
+    }
+        // else {
+        //     req.session.logged_in = true
+        //     }
+    
 
-    const validPassword = userData.checkpassword(req.body.password)
+    const validPassword = userData.checkPassword(req.body.password)
 
     if(!validPassword) {
         res.status(400).json({ message: "Incorrect password, please try again"})
@@ -70,13 +74,14 @@ router.post('/login',  (req, res) => {
     }
     req.session.save(() => {
         req.session.user_id = userData.id;
-        req.session.username = userData.username;
+        req.session.email = userData.email;
         req.session.logged_in = true;
         
          res.json(userData)
         })
  })
-
+}
+)
  router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
@@ -86,5 +91,6 @@ router.post('/login',  (req, res) => {
       res.status(404).end();
     }
   });
+
 
 module.exports = router

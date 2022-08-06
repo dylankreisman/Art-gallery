@@ -12,10 +12,11 @@ if (email && password) {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json'},
     })
+    
 
     if(response.ok) {
 
-        document.location.replace('/homepage');
+        window.location.replace('/');
     } else {
         alert(response.statusText)
     }
