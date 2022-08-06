@@ -1,4 +1,3 @@
-const { response } = require("express");
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
@@ -24,5 +23,5 @@ if (email && password) {
 }
 
 document
-.querySelector('.login-form')
-.addEventListener('submit', loginFormHandler);
+    .querySelector('.login-form')
+    .addEventListener('submit', loginFormHandler);

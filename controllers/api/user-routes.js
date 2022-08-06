@@ -1,7 +1,5 @@
 const router = require('express').Router()
 const { User, Image, Category } = require('../../models')
-const { restore } = require('../../models/User')
-
 
 router.get('/',  (req, res) => {
     User.findAll({
@@ -42,7 +40,7 @@ router.post('/', async (req, res) => {
         const userData = await User.create(req.body);
     
         req.session.save(() => {
-          req.session.id = userData.id;
+          req.session.user_id = userData.id;
           req.session.logged_in = true;
     
           res.status(200).json(userData);
@@ -71,7 +69,7 @@ router.post('/login',  (req, res) => {
     return;
     }
     req.session.save(() => {
-        req.session.id = userData.id;
+        req.session.user_id = userData.id;
         req.session.username = userData.username;
         req.session.logged_in = true;
         
