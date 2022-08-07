@@ -27,3 +27,47 @@ const uploadImage = async (imagePath) => {
     console.error(error);
   }
 };
+
+/////////////////////////////////////
+// Gets details of an uploaded image
+/////////////////////////////////////
+const getAssetInfo = async (publicId) => {
+
+  // Return colors in the response
+  const options = {
+    colors: true,
+  };
+
+  try {
+      // Get details about the asset
+      const result = await cloudinary.api.resource(publicId, options);
+      console.log(result);
+      return result.colors;
+      } catch (error) {
+      console.error(error);
+  }
+};
+
+//////////////////
+//
+// Main function
+//
+//////////////////
+(async () => {
+
+  // Set the image to upload
+  const imagePath = 'https://cloudinary-devs.github.io/cld-docs-assets/assets/images/happy_people.jpg';
+
+  // Upload the image
+  const publicId = await uploadImage(imagePath);
+
+  // Get the colors in the image
+  const colors = await getAssetInfo(publicId);
+
+  // Create an image tag, using two of the colors in a transformation
+  const imageTag = await createImageTag(publicId, colors[0][0], colors[1][0]);
+
+  // Log the image tag to the console
+  console.log(imageTag);
+
+})();
