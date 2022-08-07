@@ -113,17 +113,17 @@ router.get('/requests', (req, res) => {
 });
 
 
-    router.get('/login', (req, res) => {
-      // If the user is already logged in, redirect the request to another route
-      if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
-      }
-    
-      res.render('login');
-    });
-    
-    router.get('/signup', (req,res) => res.render('signup'))
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/signup', (req,res) => res.render('signup'))
 
 
 router.post('/upload', (req, res) => {
@@ -134,8 +134,7 @@ router.post('/upload', (req, res) => {
 
 router.get('/request', (req, res) => res.render('request'));
 
-router.get('/signup', (req, res) => res.render('signup'));
+router.get('/upload', (req, res) => res.render('upload'));
 
-router.get('/login', (req, res) => res.render('login'));
 
 module.exports = router;
