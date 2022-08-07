@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { rest } = require('lodash');
-const { Image, User } = require('../models');
+const { Image, User, Comment } = require('../models');
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
 
   Image.findAll({
 
@@ -22,69 +22,75 @@ router.get('/', async (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     })
-  
-  });
 
-  router.get('/images/:id', async (req, res) => {
+});
 
-    Image.findOne({
-  
-      where: {
-        id: req.params.id
+router.get('/images/:id', (req, res) => {
+
+  Image.findOne({
+
+    where: {
+      id: req.params.id
     },
     attributes: [
-      'id',
       'image_name',
       'hosted_url',
       'description'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['commentary', 'date_created']
+      }
     ]
+
+  })
+    .then(imagesData => {
+      const image = imagesData.get({ plain: true });
+      res.render('single-image', {
+        image,
+      })
     })
-      .then(imagesData => { 
-        const images = imagesData.get({ plain: true });
-        res.render('single-image', {
-          images,
-        })
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      })
-  
-    });
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+
+});
 
 
-  router.get('/dashboard/:id', async (req, res) => {
+router.get('/dashboard/:id', (req, res) => {
 
-    User.findOne({
-      where: {
-        id: req.params.id
+  User.findOne({
+    where: {
+      id: req.params.id
     },
-      attributes: ['username'],
-      include: [{
-        model: User,
-        attributes: [ 'id',
+    attributes: ['username', 'id'],
+    include: [{
+      model: Image,
+      attributes: [
         'image_name',
         'hosted_url',
-        'description',
-        'user_id',
-        'category_id']
+        'description']
     }]
 
+  })
+    .then(dashboardData => {
+      const dashboard = dashboardData.map(dashboard => dashboard.get({ plain: true }));
+      res.render('dashboard', {
+        dashboard,
+      })
     })
-      .then(dashboardData => {
-        const dashboard = dashboardData.map(dashboard => dashboard.get({ plain: true }));
-        res.render('dashboard', {
-          dashboard,
-        })
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      })
-    
-    });
+    .catch(err => {
+      res.status(500).json(err);
+    })
 
-    router.get('/signup', (req,res) => res.render('signup'))
+});
 
-    router.get('/login', (req,res) => res.render('login'))
+router.get('/request', (req, res) => res.render('request'));
 
-  module.exports = router;
+router.get('/signup', (req, res) => res.render('signup'));
+
+router.get('/login', (req, res) => res.render('login'));
+
+module.exports = router;

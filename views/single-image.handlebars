@@ -1,0 +1,40 @@
+{{!-- <div id="single-page">
+    <h4>{{image.image_name}}</h4>
+
+    <img class="page-imgs" src="/images/{{image.hosted_url}}" alt="{{image.description}}">
+
+    <p>{{image.description}}</p>
+
+    <button class="add-comment">Add Comment</button>
+
+    <div>
+        <h4>Comments</h4>
+        <p>{{image.comment.commentary}}</p>
+    </div>
+</div> --}}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-2" id="left"></div>
+
+        <div class="col-8" id="blog">
+            <div id="top">
+                <h2>
+                    {{image.image_name}}
+                </h2>
+                <img class="page-imgs" src="/images/{{image.hosted_url}}" alt="{{image.description}}">
+            </div>
+            <div id="bottom">
+                <p>{{image.description}}</p>
+            </div>
+            <div>
+                <h4>Comments</h4>
+                <p>{{image.comment.id}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-2" id="right"></div>
+
+</div>
+</div>
