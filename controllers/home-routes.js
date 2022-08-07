@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { rest } = require('lodash');
-const { Image, User, Comment } = require('../models');
+const { Image, User, Comment, Request } = require('../models');
 
 router.get('/', (req, res) => {
 
@@ -87,6 +87,32 @@ router.get('/dashboard/:id', (req, res) => {
     })
 })
 
+// request home_route
+router.get('/requests', (req, res) => {
+
+  Request.findAll({
+
+    attributes: [
+      'id',
+      'user_id',
+      'description',
+      'date_created',
+      'price'
+    ]
+  })
+    .then(requestData => {
+      const request = requestData.map(request => request.get({ plain: true }));
+      res.render('requests', {
+        request,
+      })
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+
+});
+
+
     router.get('/login', (req, res) => {
       // If the user is already logged in, redirect the request to another route
       if (req.session.logged_in) {
@@ -98,6 +124,7 @@ router.get('/dashboard/:id', (req, res) => {
     });
     
     router.get('/signup', (req,res) => res.render('signup'))
+
 
 router.post('/upload', (req, res) => {
     // res.redirect('/image)
