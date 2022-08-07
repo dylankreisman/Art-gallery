@@ -33,6 +33,7 @@ router.get('/images/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
+      'id',
       'image_name',
       'hosted_url',
       'description'
@@ -69,14 +70,14 @@ router.get('/dashboard/:id', (req, res) => {
     include: [{
       model: Image,
       attributes: [
+        'id',
         'image_name',
         'hosted_url',
         'description']
     }]
-
   })
-    .then(dashboardData => {
-      const dashboard = dashboardData.map(dashboard => dashboard.get({ plain: true }));
+    .then(dashData => {
+      const dashboard = dashData.get({ plain: true });
       res.render('dashboard', {
         dashboard,
       })
@@ -97,6 +98,12 @@ router.get('/dashboard/:id', (req, res) => {
     });
     
     router.get('/signup', (req,res) => res.render('signup'))
+
+router.post('/upload', (req, res) => {
+    // res.redirect('/image)
+    console.log(req);
+});
+
 
 router.get('/request', (req, res) => res.render('request'));
 
