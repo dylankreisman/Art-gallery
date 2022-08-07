@@ -1,10 +1,9 @@
-const { response } = require("express");
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-const email = document.querySelector("#username-login").value.trim()
-const password = document.querySelector("#password-login").value.trim()
+const email = document.querySelector("#login-email").value.trim()
+const password = document.querySelector("#login-password").value.trim()
 
 if (email && password) {
 
@@ -13,10 +12,11 @@ if (email && password) {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json'},
     })
+    
 
     if(response.ok) {
 
-        document.location.replace('/homepage');
+        window.location.replace('/');
     } else {
         alert(response.statusText)
     }
@@ -24,5 +24,5 @@ if (email && password) {
 }
 
 document
-.querySelector('.login-form')
-.addEventListener('submit', loginFormHandler);
+    .querySelector('.login-form')
+    .addEventListener('submit', loginFormHandler);
