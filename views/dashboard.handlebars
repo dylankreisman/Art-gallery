@@ -1,6 +1,3 @@
-{{!-- users profile page with uploaded photos and saves --}}
-
-
 <h2>{{dashboard.username}}</h2>
 
 
@@ -8,4 +5,13 @@
     <h3>Uploaded Photos</h3>
 </div>
 
-<div></div>
+{{#each user.images as |image| }}
+<div class="uploads">
+    <h4>{{image.image_name}}</h4>
+    <div class="images">
+        <a class="link" href="/images/{{image.id}}"><img class="hp-imgs" src="/images/{{image.hosted_url}}"
+                alt="{{image.description}}"></a>
+        <p>{{description}}</p>
+    </div>
+
+    {{/each}}
