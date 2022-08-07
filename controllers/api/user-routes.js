@@ -48,13 +48,17 @@ router.get('/:id', (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
+        const userData = await User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password
+        });
     
         req.session.save(() => {
           req.session.user_id = userData.id;
           req.session.logged_in = true;
     
-          res.status(200).json(userData);
+          res.json(userData);
         });
       } catch (err) {
         res.status(400).json(err);
