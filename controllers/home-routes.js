@@ -99,6 +99,7 @@ router.get('/dashboard/:id', (req, res) => {
     
     router.get('/signup', (req,res) => res.render('signup'))
 
+    
 router.post('/upload', (req, res) => {
     // res.redirect('/image)
     console.log(req);
