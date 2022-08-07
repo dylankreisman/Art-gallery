@@ -1,3 +1,36 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@mardill 
+Your GitHub academic discount coupon has expired
+If you’re still eligible, you may re-apply.
+If you’re no longer eligible, you may either update your payment information, or downgrade your account.
+If you have any questions, please contact GitHub Education.
+
+dylankreisman
+/
+Art-gallery
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Art-gallery/public/css/style.css
+@mardill
+mardill request page and home button
+Latest commit ea58c6d 2 days ago
+ History
+ 1 contributor
+122 lines (97 sloc)  1.57 KB
+
 
 p {
     font-size:16px;
@@ -118,5 +151,4 @@ img.page-imgs {
     margin-bottom: 30px;
     margin-top: 20px;
 }
-
 

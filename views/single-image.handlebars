@@ -29,8 +29,13 @@
                 <p>{{image.description}}</p>
             </div>
             <div>
+                <button class="add-comment">Add Comment</button>
                 <h4>Comments</h4>
-                <p>{{image.comment.id}}</p>
+                <div class="comments">
+                    {{#each image.comments as |comment| }}
+                    <p>{{comment.commentary}}</p>
+                    {{/each}}
+                </div>
             </div>
         </div>
     </div>
