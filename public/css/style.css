@@ -46,11 +46,11 @@ nav a {
     color: white; 
 }
 
-#gallery {
+/* #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+} */
 
 .main img{
     max-width: 200px;
