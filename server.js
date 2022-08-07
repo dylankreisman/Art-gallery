@@ -5,7 +5,7 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-//const cloudinary = require('cloudinary');
+const cloudinary = require('cloudinary').v2;
 
 const app = express();
 const PORT = process.env.PORT || 3001;
