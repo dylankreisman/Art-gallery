@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Image, Category } = require('../../models')
+const { User, Image, Category, Request } = require('../../models')
 const { restore } = require('../../models/User')
 
 
@@ -10,7 +10,11 @@ router.get('/',  (req, res) => {
         {
             model: Image,
             attributes: ['id', 'image_name', 'description', 'category_id', 'hosted_url']
-        }]
+        },
+        {
+          model: Request,
+          attributes: ['id', 'user_id', 'description', 'category_id', 'price']
+      }]
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -28,7 +32,11 @@ router.get('/:id', (req, res) => {
         include: [{
             model: Image,
             attributes: ['id', 'image_name', 'description', 'category_id']
-        }]
+        },
+        {
+          model: Request,
+          attributes: ['id', 'user_id', 'description', 'category_id', 'price']
+      }]
     })
     .then((userData) => res.json(userData))
     .catch((err) => {

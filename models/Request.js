@@ -20,7 +20,14 @@ Request.init(
           key: 'id'
         }
       },
-    request_info: {
+      category_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'category',
+          key: 'id',
+        },
+    },
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -31,7 +38,11 @@ Request.init(
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW, 
-    }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
   },
   {
     sequelize,

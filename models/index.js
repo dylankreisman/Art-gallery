@@ -44,4 +44,12 @@ Request.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+Request.belongsTo(Category, {
+    foreignKey: 'category_id'
+});
+
+Category.hasMany(Request, {
+    foreignKey: 'category_id'
+});
+
 module.exports = { User, Category, Image, Comment, Request};
