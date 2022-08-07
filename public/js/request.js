@@ -14,7 +14,7 @@ const requestFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/homepage')
+            document.location.replace('/requests')
         } else {
             alert('Submission Failed!')
         }
