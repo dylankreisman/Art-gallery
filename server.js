@@ -7,6 +7,7 @@ const path = require('path');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //const cloudinary = require('cloudinary').v2;
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -38,3 +39,11 @@ sequelize.sync({ force: false}).then(() => {
     app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));;
 })
 
+
+//cloudinary
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
