@@ -87,10 +87,7 @@ router.post('/login',  (req, res) => {
             res.status(400).json({ message: 'Incorrect username or email, try again'})
             return;
     }
-        // else {
-        //     req.session.logged_in = true
-        //     }
-    
+
 
     const validPassword = userData.checkPassword(req.body.password)
 
