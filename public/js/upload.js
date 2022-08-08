@@ -1,4 +1,7 @@
-const signupFormHandler = async (event) => {
+const cloudinary = require('cloudinary').v2;
+require('dotenv').config();
+
+const uploadFormHandler = async (event) => {
     event.preventDefault();
 
     const imageNameEl = document.querySelector('#image-name')
@@ -6,6 +9,7 @@ const signupFormHandler = async (event) => {
     const imageCategoryEl = document.querySelector('#image-category')
     const imageUserEl = document.querySelector('#image-user')
     const uploadEl = document.querySelector('#upload')
+    const uploadinfo = uploadEl.value
 
 
         const response = await fetch('/api/images', {
@@ -15,7 +19,7 @@ const signupFormHandler = async (event) => {
                 description: imageDescriptionEl.value, 
                 category_id: imageCategoryEl.value,
                 user_id: imageUserEl.value,
-                hosted_url: uploadEl.value
+                hosted_url: uploadinfo.value
             }),
             headers: {'Content-Type': 'application/json'}
         
