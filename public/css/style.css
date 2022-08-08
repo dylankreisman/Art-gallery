@@ -125,7 +125,7 @@ img.page-imgs {
     margin-top: 20px;
 }
 
-.request-page {
+.request-page, .container {
     margin-top: 20px;
     margin-left: 40px;
 }
@@ -137,7 +137,20 @@ img.page-imgs {
 
 }
 
-.request, .login, .signup {
+.request, .login, .signup, .upload-form {
     margin-left: 150px;
     margin-top: 40px;
+}
+
+.add-comment  {
+    margin-top: 40px;
+}
+
+.comment-section {
+    margin-top: 50px;
+    margin-bottom: 500px;
+}
+
+.comments {
+    margin-top: 20px;
 }
