@@ -1,22 +1,28 @@
-const commentFormHandler = async (event) => {
+async function commentFormHandler(event) {
     event.preventDefault();
 
-    const commentary = document.querySelector('textarea[name="comment-text"]').value.trim()
+    const commentaryEl = document.querySelector('input[name="comment-text"]').value.trim();
+    
+    const image_idEl = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
 
-    if (commentary) {
+    if (commentaryEl && image_idEl) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
-                commentary
+                image_id: image_idEl.value,
+                commentary: commentaryEl.value
             }),
             headers: { 'Content-Type': 'application/json' },
         });
 
 
         if (response.ok) {
-            document.location.replace('/single-page');
+            document.location.replace("/");
+;
         } else {
-            alert(response.statusText)
+            alert('failed to comment')
         }
     }
 }
