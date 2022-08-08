@@ -3,7 +3,7 @@ const { User, Image, Category, Comment } = require('../../models')
 
 
 router.get('/', (req, res) => {
-    Request.findAll({
+     Comment.findAll({
         attributes: ['id',
             'commentary',
             'user_id',
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-    Request.findOne({
+    Comment.findOne({
         where: {
             id: req.params.id
         },

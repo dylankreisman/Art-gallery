@@ -37,7 +37,7 @@
                     </div>
 
                     <div id="bottom-half-side">
-                        {{#if logged_in}}
+                        {{#if session.logged_in}}
                         <button id="logout">Logout</button>
                         {{else}}
                         <a href="/login">Login</a>
@@ -58,7 +58,9 @@
 
     <script src="js/cloudinary.js"></script>
     <script src="js/buttons.js"></script>
+    {{#if logged_in}}
     <script src="js/logout.js"></script>
+    {{/if}}
 
 </body>
 
