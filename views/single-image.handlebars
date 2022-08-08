@@ -1,17 +1,17 @@
-<div class="container">
+{{!-- <div class="container">
     <div class="row">
-        <div class="col-2" id="left"></div>
+        <div class="col-2" id="left"></div> --}}
+        <div class="single-page">
+            {{!-- <div class="col-8" id="blog"> --}}
+                <div id="top">
+                    <h2>
+                        {{image.image_name}}
+                    </h2>
+                    <img class="page-imgs" src="{{image.hosted_url}}" alt="{{image.description}}">
+                    <p>{{image.description}}</p>
+                </div>
 
-        <div class="col-8" id="blog">
-            <div id="top">
-                <h2>
-                    {{image.image_name}}
-                </h2>
-                <img class="page-imgs" src="/images/{{image.hosted_url}}" alt="{{image.description}}">
-            </div>
-            <div id="bottom">
-                <p>{{image.description}}</p>
-            </div>
+                    
 
                 <form class="card-body comment-form" id="comment-form">
                     <div class="form-row">
@@ -20,22 +20,21 @@
                     </div>
                     <button type="submit" class="btn">Submit</button>
                 </form>
-        </div>
-
-
-        <div class="comment-section">
-            <h4>Comments</h4>
-            <div class="comments">
-                {{#each image.comments as |comment| }}
-                <p>{{comment.commentary}}</p>
-                {{/each}}
             </div>
+
+
+            <div class="comment-section">
+                <h4>Comments</h4>
+                <div class="comments">
+                    {{#each image.comments as |comment| }}
+                    <p>{{comment.commentary}}</p>
+                    {{/each}}
+                </div>
+            </div>
+
         </div>
+    {{!-- </div>
+</div> --}}
 
-    </div>
-</div>
-<div class="col-2" id="right"></div>
-
-</div>
 
 <script src="./js/addcomment.js"></script>
