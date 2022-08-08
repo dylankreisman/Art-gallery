@@ -57,9 +57,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     Comment.create(req.body, {
-        where: {
-            model: Comment
-        }
+        commentary: req.body.commentary
     })
         .then((commentData) => res.json(commentData))
         .catch((err) => {
