@@ -1,11 +1,14 @@
 
+const emailEl = document.querySelector("#login-email")
+const passwordEl = document.querySelector("#login-password")
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-const email = document.querySelector("#login-email").value.trim()
-const password = document.querySelector("#login-password").value.trim()
+    const email = emailEl.value.trim();
+    const password = passwordEl.value.trim();
 
-if (email && password) {
+ if (email && password) {
 
     const response = await fetch('/api/users/login', {
         method: 'POST',
@@ -15,14 +18,12 @@ if (email && password) {
     
 
     if(response.ok) {
-
-        window.location.replace('/');
+        alert("You've logged in")
+        document.location.replace('/');
     } else {
         alert(response.statusText)
-    }
+    // }
 }
 }
-
-document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+}
+document.querySelector('#login-btn').addEventListener('click', loginFormHandler);
