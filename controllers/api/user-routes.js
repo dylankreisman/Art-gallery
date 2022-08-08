@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const { User, Image, Category, Request } = require('../../models')
+const { User, Image, Category, Request, Comment } = require('../../models')
 const { restore } = require('../../models/User')
 
 
@@ -15,7 +15,15 @@ router.get('/',  (req, res) => {
         {
           model: Request,
           attributes: ['id', 'username', 'description', 'category_id', 'price']
-      }]
+
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'commentary', 'image_id', 'user_id', 'date_created'],
+      }
+    
+    ]
+
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -37,7 +45,14 @@ router.get('/:id', (req, res) => {
         {
           model: Request,
           attributes: ['id', 'username', 'description', 'category_id', 'price']
-      }]
+
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'commentary', 'image_id', 'user_id', 'date_created'],
+      }
+    ]
+
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -76,10 +91,7 @@ router.post('/login',  (req, res) => {
             res.status(400).json({ message: 'Incorrect username or email, try again'})
             return;
     }
-        // else {
-        //     req.session.logged_in = true
-        //     }
-    
+
 
     const validPassword = userData.checkPassword(req.body.password)
 
@@ -90,13 +102,14 @@ router.post('/login',  (req, res) => {
     req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.email = userData.email;
-        req.session.username = userData.username;
         req.session.logged_in = true;
         
          res.json(userData)
         })
  })
 }
+
+
 )
  router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
