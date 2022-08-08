@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
+const cloudinary = require("cloudinary").v2;
 
 const sequelize = process.env.JAWSDB_URL
 ? new Sequelize(process.env.JAWSDB_URL)
@@ -11,9 +12,20 @@ const sequelize = process.env.JAWSDB_URL
 
 module.exports = sequelize
 
+cloudinary.config({
+    cloud_name: "dkwiaib2k",
+    api_key: "769369652917377",
+    api_secret: "Rr7WebAKdqYDC_9w4dxZlGFNsdE"
+});
 
-/* cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET
-}); */
+cloudinary.uploader
+.upload("./public/images/20210104_102447.jpg", {
+    secure: true,
+    resource_type: "image",
+})
+.then((result) => {
+    console.log("success", JSON.stringify(result, null, 2));
+})
+.catch((error) => {
+    console.log("error", JSON.stringify(error, null, 2));
+});
