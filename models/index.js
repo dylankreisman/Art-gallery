@@ -37,11 +37,11 @@ Comment.belongsTo(Image, {
 });
 
 User.hasMany(Request, {
-    foreignKey: 'user_id'
+    foreignKey: 'username'
 });
 
 Request.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'username'
 });
 
 Request.belongsTo(Category, {

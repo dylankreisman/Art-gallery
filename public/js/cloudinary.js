@@ -1,4 +1,4 @@
-const cloudinary = require('cloudinary')
+/* const cloudinary = require('cloudinary')
 
 var myWidget = cloudinary.createUploadWidget({
     cloudName: 'dkwiaib2k', 
@@ -12,4 +12,4 @@ var myWidget = cloudinary.createUploadWidget({
   )
   document.getElementById("upload_widget").addEventListener("click", function(){
       myWidget.open();
-    }, false);
+    }, false); */

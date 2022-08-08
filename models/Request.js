@@ -12,12 +12,12 @@ Request.init(
       primaryKey: true,
       autoIncrement: true
     },
-    user_id: {
-        type: DataTypes.INTEGER,
+    username: {
+        type: DataTypes.STRING,
         allowNull: false,
         references: {
           model: 'user',
-          key: 'id'
+          key: 'username'
         }
       },
       category_id: {

@@ -1,14 +1,20 @@
 const requestFormHandler = async (event) => {
     event.preventDefault();
 
-    const category = document.querySelector('#request-category')
-    const description = document.querySelector('#request-description')
-    const price = document.querySelector('#request-price')
+    const categoryEl = document.querySelector('#request-category')
+    const descriptionEl = document.querySelector('#request-description')
+    const priceEl = document.querySelector('#request-price')
+    const usernameEl = document.querySelector('#request-username')
 
-    if (category && description && price) {
+    if (categoryEl && descriptionEl && priceEl && usernameEl) {
         const response = await fetch('/api/requests', {
             method: 'POST',
-            body: JSON.stringify({ category, description, price }),
+            body: JSON.stringify({ 
+                category_id: categoryEl.value, 
+                description: descriptionEl.value, 
+                price: priceEl.value,
+                username: usernameEl.value
+             }),
             headers: {'Content-Type': 'application/json'}
         
         });

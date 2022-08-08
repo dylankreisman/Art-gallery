@@ -94,7 +94,7 @@ router.get('/requests', (req, res) => {
 
     attributes: [
       'id',
-      'user_id',
+      'username',
       'description',
       'date_created',
       'price'
