@@ -15,6 +15,7 @@ router.get('/',  (req, res) => {
         {
           model: Request,
           attributes: ['id', 'username', 'description', 'category_id', 'price']
+
       },
       {
         model: Comment,
@@ -22,6 +23,7 @@ router.get('/',  (req, res) => {
       }
     
     ]
+
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -43,12 +45,14 @@ router.get('/:id', (req, res) => {
         {
           model: Request,
           attributes: ['id', 'username', 'description', 'category_id', 'price']
+
       },
       {
         model: Comment,
         attributes: ['id', 'commentary', 'image_id', 'user_id', 'date_created'],
       }
     ]
+
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
