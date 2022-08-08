@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
       const images = imageData.map(image => image.get({ plain: true }));
       res.render('homepage', {
         images,
+        logged_in: req.session.logged_in 
       })
     })
     .catch(err => {
