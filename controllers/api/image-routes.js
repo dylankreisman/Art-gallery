@@ -4,7 +4,7 @@ const { User, Image, Category, Comment } = require('../../models')
 
 router.get('/',  (req, res) => {
     Image.findAll({
-        attributes: ['id', 'image_name', 'description', 'category_id', 'user_id', 'hosted_url'],
+        attributes: ['id', 'image_name', 'description', 'category_id', 'hosted_url'],
         order: [['date_created', 'DESC']],
         include: [
           {
@@ -13,7 +13,7 @@ router.get('/',  (req, res) => {
           },
           {
             model: User,
-            attributes: ['username']
+            attributes: ['username', 'id',]
           }
         ]
     })
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'image_name', 'description', 'category_id', 'user_id', 'hosted_url'],
+        attributes: ['id', 'image_name', 'description', 'category_id', 'hosted_url'],
         order: [['date_created', 'DESC']],
         include: [
           {
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
           },
           {
             model: User,
-            attributes: ['username']
+            attributes: ['username', 'id']
           }
         ]
     })

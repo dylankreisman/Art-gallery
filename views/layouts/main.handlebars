@@ -17,9 +17,9 @@
         <h1><a href="/">Find & Upload Art!</a></h1>
         <nav>
             <a href="/">Home</a>
-            {{#if session.logged_in}}
-            <a href="/dashboard/{{id}}">My Dashboard</a>
-            {{/if}}
+
+            <a href="/dashboard/{{user_id}}">My Dashboard</a>
+
             <a href="/categories">Categories</a>
             <a href="/requests">Requests</a>
         </nav>
@@ -37,12 +37,12 @@
                     </div>
 
                     <div id="bottom-half-side">
-                        {{#if session.logged_in}}
+
                         <button id="logout">Logout</button>
-                        {{else}}
+
                         <a href="/login">Login</a>
                         <a href="/signup">Sign Up</a>
-                        {{/if}}
+
                     </div>
 
                 </div>
@@ -58,9 +58,9 @@
 
     <script src="js/cloudinary.js"></script>
     <script src="js/buttons.js"></script>
-    {{#if logged_in}}
+
     <script src="js/logout.js"></script>
-    {{/if}}
+
 
 </body>
 
