@@ -46,13 +46,13 @@ nav a {
     color: white; 
 }
 
-/* #gallery {
+.homepage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-} */
+}
 
-.main img{
+#body img{
     max-width: 200px;
     margin: 20px;
 }
@@ -117,5 +117,17 @@ img.page-imgs {
     max-height: auto;
     margin-bottom: 30px;
     margin-top: 20px;
+}
+
+.request-page {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.requests {
+    background-color: pink;
+    margin-top: 40px;
+    padding: 20px;
+
 }
 
