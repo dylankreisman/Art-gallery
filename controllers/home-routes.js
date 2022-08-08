@@ -51,6 +51,7 @@ router.get('/images/:id', (req, res) => {
       const image = imagesData.get({ plain: true });
       res.render('single-image', {
         image,
+        logged_in: req.session.logged_in
       })
     })
     .catch(err => {
@@ -81,6 +82,7 @@ router.get('/dashboard/:id', (req, res) => {
       const dashboard = dashData.get({ plain: true });
       res.render('dashboard', {
         dashboard,
+        logged_in: req.session.logged_in
       })
     })
     .catch(err => {
@@ -105,6 +107,7 @@ router.get('/requests', (req, res) => {
       const request = requestData.map(request => request.get({ plain: true }));
       res.render('requests', {
         request,
+        logged_in: req.session.logged_in
       })
     })
     .catch(err => {
@@ -133,9 +136,13 @@ router.post('/upload', (req, res) => {
 });
 
 
-router.get('/request', (req, res) => res.render('request'));
+router.get('/request', (req, res) => res.render('request', {
+  logged_in: req.session.logged_in
+}));
 
-router.get('/upload', (req, res) => res.render('upload'));
+router.get('/upload', (req, res) => res.render('upload', {
+  logged_in: req.session.logged_in
+}));
 
 
 module.exports = router;
