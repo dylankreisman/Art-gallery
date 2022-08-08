@@ -137,3 +137,7 @@ img.page-imgs {
 
 }
 
+.request, .login, .signup {
+    margin-left: 150px;
+    margin-top: 40px;
+}
