@@ -28,8 +28,17 @@
             <div id="bottom">
                 <p>{{image.description}}</p>
             </div>
+
             <div>
-                <button class="add-comment">Add Comment</button>
+                <div class="input-group mb-3 new-comment-form" >
+                    <input type="text" class="form-control" id="comment-form" placeholder="Add a comment..."
+                        aria-label="new-comment" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2 add-comment-btn">Submit</button>
+                </div>
+            </div>
+
+
+            <div class="comment-section">
                 <h4>Comments</h4>
                 <div class="comments">
                     {{#each image.comments as |comment| }}
@@ -37,8 +46,11 @@
                     {{/each}}
                 </div>
             </div>
+
         </div>
     </div>
     <div class="col-2" id="right"></div>
 
 </div>
+
+<script src="./js/addcomment.js"></script>

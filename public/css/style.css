@@ -52,22 +52,28 @@ nav a {
     justify-content: center;
 }
 
-#body img{
+#body img, #dash-section img{
     max-width: 200px;
     margin: 20px;
 }
 
-.gal-img {
+.gal-img, .uploads {
     width: 250px;
     height: 450px;
     border: 2px solid black;
     margin: 5px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
-#body {
+#body, #dash-section {
     text-align: center;
     font-size: 18px;
+}
+
+#dash-section, #intro, .dash {
+    margin-top: 40px;
+    margin-left: 50px;
 }
 
 #side button {
@@ -119,7 +125,7 @@ img.page-imgs {
     margin-top: 20px;
 }
 
-.request-page {
+.request-page, .container {
     margin-top: 20px;
     margin-left: 40px;
 }
@@ -131,3 +137,20 @@ img.page-imgs {
 
 }
 
+.request, .login, .signup, .upload-form {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.add-comment  {
+    margin-top: 40px;
+}
+
+.comment-section {
+    margin-top: 50px;
+    margin-bottom: 500px;
+}
+
+.comments {
+    margin-top: 20px;
+}
