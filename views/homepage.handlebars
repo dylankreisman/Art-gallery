@@ -1,19 +1,19 @@
 <div class="homepage">
 
-{{#each images as |image| }}
 
-<div id="body">
-    <div class="gal-img">
-        <h4>{{image_name}}</h4>
-        <div class="images">
-            <a class="link" href="/images/{{id}}"><img class="hp-imgs" src="{{hosted_url}}"
-                    alt="{{description}}"></a>
-            <p>{{description}}</p>
+    {{#each images as |image| }}
+
+    <div id="body">
+        <div class="gal-img">
+            <h4>{{image_name}}</h4>
+            <div class="images">
+                <a class="link" href="/images/{{id}}"><img class="hp-imgs" src="{{hosted_url}}"
+                        alt="{{description}}"></a>
+                <p>{{description}}</p>
+            </div>
+
         </div>
-
     </div>
 
-</div>
-
-{{/each}}
+    {{/each}}
 </div>
