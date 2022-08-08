@@ -1,17 +1,19 @@
-<h2>{{dashboard.username}}</h2>
+<div class="dash">
+    <h2>{{dashboard.username}}</h2>
 
-
-<div>
-    <h3>Uploaded Photos</h3>
-</div>
-
-{{#each user.images as |image| }}
-<div class="uploads">
-    <h4>{{image.image_name}}</h4>
-    <div class="images">
-        <a class="link" href="/images/{{image.id}}"><img class="hp-imgs" src="/images/{{image.hosted_url}}"
-                alt="{{image.description}}"></a>
-        <p>{{description}}</p>
+    <div id="intro">
+        <h4>Uploaded Photos</h4>
     </div>
+    <div id="dash-section">
+        {{#each dashboard.images as |image| }}
+        <div class="uploads">
+            <h4>{{image.image_name}}</h4>
+            <div class="dash-images">
+                <a class="link" href="/images/{{image.id}}"><img class="hp-imgs" src="/images/{{image.hosted_url}}"
+                        alt="{{image.description}}"></a>
+                <p>{{description}}</p>
+            </div>
 
-    {{/each}}
+            {{/each}}
+        </div>
+    </div>

@@ -52,22 +52,28 @@ nav a {
     justify-content: center;
 }
 
-#body img{
+#body img, #dash-section img{
     max-width: 200px;
     margin: 20px;
 }
 
-.gal-img {
+.gal-img, .uploads {
     width: 250px;
     height: 450px;
     border: 2px solid black;
     margin: 5px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
-#body {
+#body, #dash-section {
     text-align: center;
     font-size: 18px;
+}
+
+#dash-section, #intro, .dash {
+    margin-top: 40px;
+    margin-left: 50px;
 }
 
 #side button {
