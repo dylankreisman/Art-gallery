@@ -7,7 +7,7 @@ p {
     width: 100%;
 }
 
-
+/* header styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -46,6 +46,8 @@ nav a {
     color: white; 
 }
 
+/* homepage styling */
+
 .homepage {
     display: flex;
     flex-wrap: wrap;
@@ -57,7 +59,7 @@ nav a {
     margin: 20px;
 }
 
-.gal-img, .uploads {
+.gal-img {
     width: 250px;
     height: 450px;
     border: 2px solid black;
@@ -71,9 +73,22 @@ nav a {
     font-size: 18px;
 }
 
+#body h4 {
+    margin-top: 12px;
+}
+
 #dash-section, #intro, .dash {
     margin-top: 40px;
     margin-left: 50px;
+}
+
+
+/* button section styling */
+
+#side {
+    float: left;
+    background-color: #5C93F7;
+    padding-top: 20px;
 }
 
 #side button {
@@ -91,12 +106,6 @@ button {
     color: white;
 }
 
-#side button {
-    margin-top: 20px;
-    border: 2px solid black;
-    background-color: black;
-    color: white;
-}
 
 #bottom-half-side {
     display: flex;
@@ -107,6 +116,7 @@ button {
 
 #bottom-half-side a {
     padding: 10px;
+    color: black;
 }
 
 
@@ -118,13 +128,28 @@ button {
     width: 450px;
 }
 
-img.page-imgs {
-    max-width: 400px;
+#top {
+    padding-left: 100px;
+}
+
+.single-page #top img {
+    max-width: 500px;
     max-height: auto;
     margin-bottom: 30px;
     margin-top: 20px;
 }
 
+.comment-form {
+    margin-left: 80px;
+}
+.comment-form button{
+    margin-top: 20px;
+    border: 3px solid #5C93F7;
+    background-color: #5C93F7;
+    color: white;
+}
+
+/* request page styling */
 .request-page, .container {
     margin-top: 20px;
     margin-left: 40px;
@@ -137,20 +162,38 @@ img.page-imgs {
 
 }
 
-.request, .login, .signup, .upload-form {
+.request, .login, .signup {
     margin-left: 150px;
     margin-top: 40px;
 }
 
-.add-comment  {
-    margin-top: 40px;
-}
+
+
+/* single page comment section */
+
 
 .comment-section {
     margin-top: 50px;
     margin-bottom: 500px;
+    margin-left: 80px;
 }
 
-.comments {
+.comments p{
     margin-top: 20px;
+    margin-left: 20px;
+    border: 2px solid lightgrey;
+    padding: 10px;
+
+}
+
+/* upload photos page */
+
+
+#upload-title {
+    margin-left: 20px;
+}
+
+#upload_widget, .upload-form  {
+    margin-top: 20px;
+    margin-left: 100px;
 }

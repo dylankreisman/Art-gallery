@@ -2,7 +2,9 @@ const { Image } = require('../models');
 
 const imageData = [
     {
+
         hosted_url: "/images/20210104_102447.jpg",
+
         category_id: "1",
         user_id: "1",
         image_name: "Beauty Within",
@@ -10,6 +12,7 @@ const imageData = [
     },
     {
         hosted_url: "/images/20210117_122454.jpg",
+
         category_id: "1",
         user_id: "2",
         image_name: "The Loop",
