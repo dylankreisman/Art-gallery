@@ -3,12 +3,12 @@ const { User, Request, Category } = require('../../models')
 
 router.get('/',  (req, res) => {
     Request.findAll({
-        attributes: ['id', 'user_id', 'category_id', 'description', 'price', 'date_created'],
+        attributes: ['id', 'username', 'category_id', 'description', 'price', 'date_created'],
         order: [['date_created', 'DESC']],
         include: [
           {
             model: User,
-            attributes: ['username', 'email']
+            attributes: ['id', 'email']
           },
           {
             model: Category,
@@ -28,12 +28,12 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes:['id', 'user_id', 'category_id', 'description', 'price', 'date_created'],
+        attributes:['id', 'username', 'category_id', 'description', 'price', 'date_created'],
         order: [['date_created', 'DESC']],
         include: [
           {
             model: User,
-            attributes: ['username', 'email']
+            attributes: ['id', 'email']
           },
           {
             model: Category,

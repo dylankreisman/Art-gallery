@@ -2,7 +2,7 @@ const { Request } = require('../models');
 
 const requestData = [
     {
-        user_id: "1",
+        username: "Shmuffman",
         description: "Pen drawing of Clancy from Midnight Gospel",
         category_id: "3",
         price: "20"
