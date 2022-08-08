@@ -9,7 +9,7 @@ const uploadFormHandler = async (event) => {
     const imageCategoryEl = document.querySelector('#image-category')
     const imageUserEl = document.querySelector('#image-user')
     const uploadEl = document.querySelector('#upload')
-    const uploadinfo = uploadEl.value
+    // const uploadinfo = uploadEl.value
 
 
         const response = await fetch('/api/images', {
