@@ -215,6 +215,11 @@ button {
     margin-top: 40px;
 }
 
+#request:hover, #saved:hover, #upload:hover, #logout:hover {
+    background-color: white;
+    color: blue;
+}
+
 
 
 /* single page comment section */
