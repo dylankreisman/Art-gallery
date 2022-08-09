@@ -70,6 +70,7 @@ router.post('/', async (req, res) => {
 ```
 ### Upload Form
 The left column shows the js file that listens for a submit button click, to run a function that listens for the input in the upload form and creates a new image model with the js code on the right.
+![code-snippet](public/images/Code-snippet-screenshot.png)
 
 
 ### Cloudinary Upload Widget
@@ -140,13 +141,13 @@ Mary Dillon:
 - LinkedIn: (https://www.linkedin.com/in/marykdillon/) 
 
 ## GIF of Deployed App
-![Login](public/images/login.gif)
+
 
 ### Login
-
+![Login](public/images/login.gif)
 
 ### Sign-up and upload image
-![Sign-login](https://drive.google.com/file/d/14g97V4RXBUwZJTZZT442BZ1zCkIz87pz/view?usp=sharing)
+![Sign-login](https://youtu.be/9cYnBMOFj8g)
 
 ### Comment
 ![Comment](public/images/comment.gif)
