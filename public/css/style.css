@@ -57,7 +57,8 @@ nav a {
     text-decoration: none;
     padding: 10px;
     text-decoration: none;
-    color: white
+    color: white;
+    display:inline-block;
 }
 
 @media only screen and (max-width: 895px) {
