@@ -61,9 +61,9 @@ router.post('/', (req, res) => {
         Comment.create({
             commentary: req.body.commentary,
             image_id: req.body.image_id,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         })
-            .then((commentData) => res.json(commentData))
+            .then((commentData) => res.json(commentData.get({plain: true})))
             .catch((err) => {
                 console.log(err)
                 res.status(400).json(err)
