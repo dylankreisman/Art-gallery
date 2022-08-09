@@ -22,7 +22,7 @@ const uploadFormHandler = async (event) => {
                 //     include: User,
                 //     attributes: ['username']
                 // } ,
-                user: imageUserEl.value,
+                user_id: imageUserEl.value,
                 hosted_url: uploadEl.value
             }),
             headers: {'Content-Type': 'application/json'}
@@ -30,7 +30,7 @@ const uploadFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace('/dashboard/'+imageUserEl.value)
         } else {
             alert(response.statusText)
         }
