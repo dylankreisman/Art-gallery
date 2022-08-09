@@ -1,6 +1,13 @@
 
-p {
+p, h2, h4, h5 {
     font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+div {
+    display: block;
 }
 
 .row {
@@ -9,15 +16,20 @@ p {
 
 /* header styling */
 header {
-    display: flex;
-    justify-content: space-between;
     height: 150px;
-    background: black;
+    background: black
+
+    
+    
+}
+
+header h1 {
+    font-family: 'Permanent Marker', cursive;
     color: white
 }
 
 header a {
-    color: white; 
+    color: white
 }
 
 header a:hover {
@@ -34,7 +46,7 @@ header h1 {
 }
 
 nav {
-    float: right;
+    /* float: right; */
     margin-right: 50px;
     padding-top: 7vh;
     display: flex;
@@ -45,8 +57,7 @@ nav a {
     text-decoration: none;
     padding: 10px;
     text-decoration: none;
-    color: white; 
-    display: inline-block;
+    color: white
 }
 
 @media only screen and (max-width: 895px) {
@@ -61,29 +72,45 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 #body img, #dash-section img{
     max-width: 200px;
     margin: 20px;
+    
 }
 
 .gal-img {
-    width: 250px;
+    width: 300px;
     height: 450px;
     border: 2px solid black;
     margin: 5px;
     margin-top: 20px;
     margin-left: 20px;
+    box-shadow: 5px 5px 2px lightgrey;
+    
+}
+
+.gal-img:hover {
+    transform: scale(1.02);
 }
 
 #body, #dash-section {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #body h4 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#body p {
     margin-top: 12px;
+    font-size: 14px;
 }
 
 #dash-section, #intro, .dash {
@@ -96,16 +123,19 @@ nav a {
 
 #side {
     float: left;
-    background-color: #5C93F7;
+    /* background-color: #5C93F7; */
+    /* border: 2px solid lightgray; */
     padding-top: 20px;
 }
 
 #side button {
     width: 100%;
-    margin-top: 20px;
-    border: 2px solid black;
-    background-color: black;
+    margin-top: 10px;
+    border: 2px solid blue;
+    background-color: blue;
     color: white;
+    padding: 10px;
+    margin-left: 50px;
 }
 
 
@@ -121,6 +151,7 @@ button {
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
+    margin-left: 50px;
 }
 
 #bottom-half-side a {
@@ -139,6 +170,12 @@ button {
 
 #top {
     padding-left: 100px;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+#top h2 {
+    text-transform: uppercase;
 }
 
 .single-page #top img {
@@ -150,6 +187,7 @@ button {
 
 .comment-form {
     margin-left: 80px;
+    width: 800px;
 }
 .comment-form button{
     margin-top: 20px;
@@ -199,10 +237,14 @@ button {
 
 
 #upload-title {
-    margin-left: 20px;
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
 #upload_widget, .upload-form  {
     margin-top: 20px;
     margin-left: 100px;
 }
+
+/* extra styling */
+
