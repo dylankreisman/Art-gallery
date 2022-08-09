@@ -9,12 +9,13 @@
                     </h2>
                     <img class="page-imgs" src="{{image.hosted_url}}" alt="{{image.description}}">
                     <p>{{image.description}}</p>
+                     <input type="hidden" id="imgid" name="imgid" value="{{image.id}}">
                 </div>
 
                 <form class="card-body comment-form" >
                     <div class="form-row">
                         <label class="form-label">Comment</label>
-                        <input id="comment" name="comment-text" class="form-input  form-control" />
+                        <input id="comment" name="comment-text" class="form-input form-control">
                         <button type="submit" class="btn">Submit</button>
                     </div>
                 </form>
