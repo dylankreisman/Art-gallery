@@ -121,7 +121,7 @@ nav a {
 }
 
 #side button {
-    width: 100%;
+    min-width: 100%;
     margin-top: 10px;
     border: 2px solid blue;
     background-color: blue;
@@ -179,7 +179,7 @@ button {
 
 .comment-form {
     margin-left: 80px;
-    width: 800px;
+    width: 775px;
 }
 .comment-form button{
     margin-top: 20px;
@@ -222,6 +222,7 @@ button {
     margin-left: 20px;
     border: 2px solid lightgrey;
     padding: 10px;
+    width: 750px;
 
 }
 
