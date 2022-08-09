@@ -215,6 +215,11 @@ button {
     margin-top: 40px;
 }
 
+#request:hover, #saved:hover, #upload:hover, #logout:hover {
+    background-color: white;
+    color: blue;
+}
+
 
 
 /* single page comment section */
@@ -249,4 +254,29 @@ button {
 }
 
 /* extra styling */
+/* dashboard styling */
 
+.dash {
+    text-align: center;
+}
+
+div .dash-images {
+    border-bottom: blue solid 1px;
+    width: 20%;
+    margin:auto;
+    display: block;
+}
+
+#intro {
+    border-bottom: blue solid 2px;
+}
+
+.uploads h4 {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+div .dash-images .link .hp-img{
+   display: flex;
+   justify-content: center;
+}
