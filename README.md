@@ -22,17 +22,17 @@ Deployed Link: https://simplicity-art-gallery.herokuapp.com/
 
 ## Installation
 
-   "bcrypt": "^5.0.1",
-   "cloudinary": "^1.30.1",
-   "connect-session-sequelize": "^7.1.4",
-   "dotenv": "^16.0.1",
-   "express": "^4.18.1",
-   "express-handlebars": "^6.0.6",
-   "express-session": "^1.17.3",
-   "formidable": "^2.0.1",
-   "mysql2": "^2.3.3",
-   "nodemon": "^2.0.19",
-   "sequelize": "^6.21.3"
+- "bcrypt": "^5.0.1",
+- "cloudinary": "^1.30.1",
+- "connect-session-sequelize": "^7.1.4",
+- "dotenv": "^16.0.1",
+- "express": "^4.18.1",
+- "express-handlebars": "^6.0.6",
+- "express-session": "^1.17.3",
+- "formidable": "^2.0.1",
+- "mysql2": "^2.3.3",
+- "nodemon": "^2.0.19",
+- "sequelize": "^6.21.3"
 
 
 ## Usage
