@@ -147,7 +147,7 @@ Mary Dillon:
 ![Login](public/images/login.gif)
 
 ### Sign-up and upload image
-![Sign-login](https://www.youtube.com/watch?v=9cYnBMOFj8g&ab_channel=DylanKreisman)
+![Sign-login](public/images/signup-upload.gif)
 
 ### Comment
 ![Comment](public/images/comment.gif)
